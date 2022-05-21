@@ -32,7 +32,7 @@ export class MainComponent implements OnInit {
     })
 
     this.textoForm= new FormGroup({
-      textoIng: new FormControl('', Validators.required),
+      textoIng: new FormControl(''),
     })
   }
 

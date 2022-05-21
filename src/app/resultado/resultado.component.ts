@@ -54,11 +54,21 @@ export class ResultadoComponent implements OnInit {
     fetch('https://api.chucknorris.io/jokes/search?query='+texto)
     .then(async resp=>{
       respuesta= await resp.json();
-      console.log(respuesta)
-      this.info=respuesta;
-      this.info.result.forEach(elemento=>{
-        this.listaQuery.push(elemento)
-      })
+      console.log("resp ", respuesta)
+      if(respuesta.status==400){
+        console.log("entra en 400")
+        this.listaQuery.push("Error con servicio: Demasiados Resultados.")
+      }else{
+        this.info=respuesta;
+        this.info.result.forEach(elemento=>{
+          this.listaQuery.push(elemento.value)
+        })
+        if(this.listaQuery.length==0){
+          this.listaQuery.push("No se encontraron resultados.")
+
+        }
+
+      }
 
     })
   }
