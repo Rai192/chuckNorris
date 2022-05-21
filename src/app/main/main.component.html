@@ -1,0 +1,33 @@
+<div class="container col-lg-6 col-sm">
+
+  <div class="container mb-5">
+    
+    <form [formGroup]="categoriaForm">
+      <div>
+        
+      </div>
+      <div class="form-group mb-2">
+        <label>Lista de categorias:</label>
+        <select class="form-control" formControlName="categoriaSelect" >
+          <option *ngFor="let categoria of categoriasList" value="{{categoria}}">{{categoria}}</option>
+        </select>
+      </div>
+    </form>
+    <button class="btn btn-primary" (click)="enviarCategoria()"> Buscar categoria</button>
+  </div>
+  
+  <div class="container mt-5">
+    
+    <form [formGroup]="textoForm">
+      <div class="form-group mb-2">
+        <label for="texto">Texto a buscar</label>
+        <input type="text" class="form-control" id="texto" formControlName="textoIng">
+        
+      </div>
+      
+    </form>
+    <button type="submit" class="btn btn-primary" (click)="enviarTexto()"> Buscar texto</button>
+  </div>
+  
+  
+</div>

@@ -1,0 +1,26 @@
+
+<div class="container col-lg-6 col-sm">
+    <div class="card"> 
+        <div class="card-body">
+            <h2 class="card-title fw-bold">Buscaste: {{tipoCompleto}}</h2>
+            <ng-container *ngIf="tipo=='cat'">
+                <h3 class="mb-2 fw-italic fw-semibold">Seccion:    <span class="text-uppercase">{{solicitud}}</span></h3>
+                
+                <p class="card-text text-break">{{info}}</p>
+            </ng-container>
+            <ng-container *ngIf="tipo=='text'">
+                <h3 class="mb-2 fw-italic fw-semibold">Escribiste:    <span class="fw-italic">{{solicitud}}</span></h3>
+                <h3 class="mb-2 mt-2">Resultado de tu busqueda: </h3>
+                <ul class="list-group">
+                    <li class="list-group-item" *ngFor="let obj of listaQuery">{{obj.value}}</li>
+                </ul>
+             
+            </ng-container>
+            
+        </div>
+    </div>
+    <button (click)="volverAHome()" class="mt-5 btn btn-primary">Volver a HOME</button>
+</div>
+
+  
+
