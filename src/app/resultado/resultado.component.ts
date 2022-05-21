@@ -24,7 +24,6 @@ export class ResultadoComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    console.log("llega")
     this.tipo= this.route.snapshot.paramMap.get('tipo');
     this.solicitud= this.route.snapshot.paramMap.get('solicitud');
     if(this.tipo=="cat"){
@@ -43,7 +42,6 @@ export class ResultadoComponent implements OnInit {
     fetch('https://api.chucknorris.io/jokes/random?category='+categoriaSeleccionada)
       .then(async resp=>{
         resp= await resp.json();
-        console.log(resp)
         this.info=resp;
         this.info= this.info.value;
       })
@@ -54,9 +52,7 @@ export class ResultadoComponent implements OnInit {
     fetch('https://api.chucknorris.io/jokes/search?query='+texto)
     .then(async resp=>{
       respuesta= await resp.json();
-      console.log("resp ", respuesta)
       if(respuesta.status==400){
-        console.log("entra en 400")
         this.listaQuery.push("Error con servicio: Demasiados Resultados.")
       }else{
         this.info=respuesta;
