@@ -38,7 +38,6 @@ export class MainComponent implements OnInit {
 
    async obtenerListaCat(){
      this.buscar=true;
-      console.log("ENTRA")
       let respuesta;
       fetch('https://api.chucknorris.io/jokes/categories')
       .then(async resp=>{
@@ -58,7 +57,6 @@ export class MainComponent implements OnInit {
       this.router.navigate([this.urlDestino+"/tipo/"+this.tipo+"/solicitud/"+categoriaSeleccionada]);
 
     }else{
-      console.log("entra el else ")
       this.router.navigate([this.urlDestino])
     }
 
@@ -69,7 +67,6 @@ export class MainComponent implements OnInit {
     let texto= this.textoForm.get("textoIng").value
     if(texto!=""){
       this.tipo="text"
-      console.log(texto)
       this.buscar=true;
       this.router.navigate([this.urlDestino+"/tipo/"+this.tipo+"/solicitud/"+texto]);
     
