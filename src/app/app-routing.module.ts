@@ -12,8 +12,7 @@ const routes: Routes = [
   },
   {
   path: 'app-resultado/tipo/:tipo/solicitud/:solicitud', 
-  component: ResultadoComponent,
-  canActivate:[GuardGuard]
+  component: ResultadoComponent
   },
   {
     path: 'app-resultado', 
