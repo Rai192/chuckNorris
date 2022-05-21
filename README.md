@@ -1,27 +1,21 @@
 # ChuckNorris
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.6.
+Proyecto generado con [Angular CLI](https://github.com/angular/angular-cli) version 13.3.6.
+Proyecto basado en las indicaciones para la realizacion de una prueba tecnica: Bajo la utilizacion de la Api publica de api.ChuckNorris.io, se utilizan principalmente 3 servicios. 
+
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Para correr este software necesitas ejecutar `ng serve` en el directorio del SW. 
+Posteriormente abre `http://localhost:4200/` en tu navegador. 
 
-## Code scaffolding
+## Uso general
+La pagina principal desplegará dos formularios, dentro de un recuadro.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+El primer campo "Lista de categorías" cargará la lista de categorías disponibles obtenidas a través de la api publica. Al seleccionar una y presionar "Buscar Categoría", redirigirá hacia otro componete mostrando el resultado.
 
-## Build
+El segundo campo "Texto a buscar", es un campo de texto libre, el cual una vez presionado el boton "Buscar Texto", redirigirá hacia otro componente el cual desplegará una lista de resultados en base al texto ingresado.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Si se intenta utilizar alguna de estas funciones sin previamente seleccionar o ingresar algun valor Angular Guard redirigirá hacia otro componente mostrando un aviso.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
