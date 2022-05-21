@@ -11,6 +11,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ResultadoComponent } from './resultado/resultado.component';
 import { GuardGuard } from './guard.guard';
+import { AvisoComponent } from './aviso/aviso.component';
 
 
 
@@ -18,7 +19,8 @@ import { GuardGuard } from './guard.guard';
   declarations: [
     AppComponent,
     MainComponent,
-    ResultadoComponent
+    ResultadoComponent,
+    AvisoComponent
   ],
   imports: [
     BrowserModule,

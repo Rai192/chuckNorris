@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Route, Router } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 import { GuardGuard } from '../guard.guard';
 import { ResultadoComponent } from '../resultado/resultado.component';
 
@@ -21,7 +21,8 @@ export class MainComponent implements OnInit {
   urlDestino: any= "app-resultado/"
 
   constructor(private router: Router,
-    guard: GuardGuard) { 
+    guard: GuardGuard,
+    private route: ActivatedRoute) { 
   }
 
   ngOnInit(): void {
@@ -36,6 +37,7 @@ export class MainComponent implements OnInit {
   }
 
    async obtenerListaCat(){
+     this.buscar=true;
       console.log("ENTRA")
       let respuesta;
       fetch('https://api.chucknorris.io/jokes/categories')
@@ -50,21 +52,33 @@ export class MainComponent implements OnInit {
 
   enviarCategoria(){
     let categoriaSeleccionada= this.categoriaForm.get('categoriaSelect').value;
-    this.tipo="cat"
-    this.buscar=true;
+    if(categoriaSeleccionada!=""){
+      this.buscar=true;
+      this.tipo="cat"
+      this.router.navigate([this.urlDestino+"/tipo/"+this.tipo+"/solicitud/"+categoriaSeleccionada]);
 
-    this.router.navigate([this.urlDestino+"/tipo/"+this.tipo+"/solicitud/"+categoriaSeleccionada]);
+    }else{
+      console.log("entra el else ")
+      this.router.navigate([this.urlDestino])
+    }
+
     
   }
 
   enviarTexto(){
     let texto= this.textoForm.get("textoIng").value
-    this.tipo="text"
-    console.log(texto)
+    if(texto!=""){
+      this.tipo="text"
+      console.log(texto)
+      this.buscar=true;
+      this.router.navigate([this.urlDestino+"/tipo/"+this.tipo+"/solicitud/"+texto]);
     
-    this.buscar=true;
+    }else{
+      this.router.navigate([this.urlDestino])
 
-    this.router.navigate([this.urlDestino+"/tipo/"+this.tipo+"/solicitud/"+texto]);
+    }
+    
+
   }
 
 }

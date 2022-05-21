@@ -14,6 +14,7 @@ export class ResultadoComponent implements OnInit {
   solicitud: any;
   tipoCompleto: any;
   listaQuery: any= []
+  
 
 
   constructor(
