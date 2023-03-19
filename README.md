@@ -1,6 +1,6 @@
 # ChuckNorris
 
-Proyecto generado con [Angular CLI](https://github.com/angular/angular-cli) version 13.3.6.
+Proyecto generado con [Angular CLI](https://github.com/angular/angular-cli) version 13.3.6. /n
 Proyecto basado en las indicaciones para la realizacion de una prueba tecnica: Bajo la utilizacion de la Api publica de api.ChuckNorris.io, se utilizan principalmente 3 servicios. 
 
 
